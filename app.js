@@ -37,7 +37,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Funktion zum Sortieren der Tabelle
     window.sortTable = (columnIndex, order) => {
         const table = document.getElementById('emissionsTable');
-        const rows = Array.from(table.rows).slice(1); // Exclude header row
+        const rows = Array.from(table.rows).slice(1); 
         const multiplier = order === 'asc' ? 1 : -1;
 
         rows.sort((a, b) => {
@@ -47,6 +47,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 : multiplier * cellA.localeCompare(cellB);
         });
 
-        rows.forEach(row => table.appendChild(row)); // Re-attach sorted rows
+        rows.forEach(row => table.appendChild(row));
     };
 });

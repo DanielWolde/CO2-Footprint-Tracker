@@ -1,0 +1,183 @@
+/* Allgemeine Stile */
+body {
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+    color: #333;
+    background-color: #f7f9fc;
+    line-height: 1.6;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Minimum Höhe auf die volle Ansichtsfensterhöhe setzen */
+}
+
+/* Farben */
+:root {
+    --primary-color: #38a169;
+    --secondary-color: #e53e3e;
+    --background-color: #f7f9fc;
+}
+
+/* Header-Stile */
+header {
+    background-color: var(--background-color);
+    padding: 15px 20px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+.container {
+    max-width: 1400px; /* Hier haben wir die Breite des Containers vergrößert */
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* Logo-Stile */
+.logo {
+    width: 80px;
+    height: auto;
+}
+
+/* Navigationsmenü */
+nav {
+    position: relative;
+    float: right;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    position: absolute;
+    right: 0;
+}
+
+nav ul li a.dropdown-item {
+    display: block;
+    padding: 10px 20px;
+    margin: 5px 0;
+    background-color: var(--primary-color);
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+nav ul li a.dropdown-item:hover {
+    background-color: #2f855a;
+}
+
+nav button {
+    font-size: 1rem;
+    padding: 8px 16px;
+    cursor: pointer;
+    display: inline-block;
+}
+
+nav button:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(66, 153, 225, 0.5);
+}
+
+/* Dropdown-Menü */
+.hidden {
+    display: none;
+}
+
+/* Schreibrichtung Stile */
+html[dir="ltr"] nav {
+    float: right;
+}
+
+html[dir="rtl"] nav {
+    float: left;
+}
+
+/* Hauptinhalt-Stile */
+main {
+    flex: 1; /* Lässt den Hauptinhalt flexibel wachsen, um den verfügbaren Platz zu nutzen */
+    display: flex;
+    padding: 20px;
+    gap: 20px;
+    max-width: 1400px; /* Hier haben wir die maximale Breite des Hauptinhalts vergrößert */
+    margin: 0 auto;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+section {
+    flex: 1;
+    background-color: #ffffff;
+    padding: 20px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    border-radius: 8px;
+}
+
+/* Tabellenstile */
+.table-container {
+    overflow-x: auto;
+    margin-top: 20px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    border-radius: 8px;
+    max-width: 1400px; /* Hier haben wir die maximale Breite der Tabelle vergrößert */
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+th, td {
+    border-bottom: 1px solid #e5e7eb;
+    padding: 12px 15px;
+    text-align: left;
+}
+
+th {
+    background-color: var(--primary-color);
+    color: #fff;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+th:hover {
+    background-color: #2c5282;
+}
+
+tr:hover {
+    background-color: #f9fafb;
+}
+
+/* Footer-Stile */
+footer {
+    background-color: var(--primary-color);
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+    width: 100%;
+    margin-top: auto; /* Verschiebt den Footer ans Ende des Flex-Containers */
+    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
+}
+
+footer a {
+    color: #fff;
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+/* Responsives Design */
+@media (max-width: 768px) {
+    main {
+        flex-direction: column;
+    }
+
+    footer {
+        padding: 15px;
+    }
+}

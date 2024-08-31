@@ -1,0 +1,266 @@
+/* Allgemeine Stile */
+body {
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+    color: #333;
+    background-color: #f7f9fc;
+    line-height: 1.6;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Minimum Höhe auf die volle Ansichtsfensterhöhe setzen */
+}
+
+/* Farben */
+:root {
+    --primary-color: #38a169;
+    --secondary-color: #e53e3e;
+    --background-color: #f7f9fc;
+}
+
+/* Header-Stile */
+header {
+    background-color: var(--background-color);
+    padding: 15px 20px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+.container {
+    max-width: 1400px; /* Breite des Containers */
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* Logo-Stile */
+.logo {
+    width: 80px;
+    height: auto;
+}
+
+/* Navigationsmenü */
+nav {
+    position: relative;
+    float: right;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    position: absolute;
+    right: 0;
+}
+
+nav ul li a.dropdown-item {
+    display: block;
+    padding: 10px 20px;
+    margin: 5px 0;
+    background-color: var(--primary-color);
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+nav ul li a.dropdown-item:hover {
+    background-color: #2f855a;
+}
+
+nav button {
+    font-size: 1rem;
+    padding: 8px 16px;
+    cursor: pointer;
+    display: inline-block;
+}
+
+nav button:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(66, 153, 225, 0.5);
+}
+
+/* Dropdown-Menü */
+.hidden {
+    display: none;
+}
+
+/* Schreibrichtung Stile */
+html[dir="ltr"] nav {
+    float: right;
+}
+
+html[dir="rtl"] nav {
+    float: left;
+}
+
+/* Hauptinhalt-Stile */
+main {
+    flex: 1; /* Lässt den Hauptinhalt flexibel wachsen */
+    display: flex;
+    padding: 20px;
+    gap: 20px;
+    max-width: 1400px; /* Maximale Breite des Hauptinhalts */
+    margin: 0 auto;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+section {
+    flex: 1;
+    background-color: #ffffff;
+    padding: 20px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    border-radius: 8px;
+}
+
+/* Tabellenstile */
+.table-container {
+    overflow-x: auto;
+    margin-top: 20px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    border-radius: 8px;
+    max-width: 1400px; /* Maximale Breite der Tabelle */
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+th, td {
+    border-bottom: 1px solid #e5e7eb;
+    padding: 12px 15px;
+    text-align: left;
+}
+
+th {
+    background-color: var(--primary-color);
+    color: #fff;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+th:hover {
+    background-color: #2c5282;
+}
+
+tr:hover {
+    background-color: #f9fafb;
+}
+
+/* Footer-Stile */
+footer {
+    background-color: var(--primary-color);
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+    width: 100%;
+    margin-top: auto; /* Verschiebt den Footer ans Ende des Flex-Containers */
+    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
+}
+
+footer a {
+    color: #fff;
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+/* Responsives Design für Tablets (Bildschirmbreite bis 1024px) */
+@media (max-width: 1024px) {
+    .container {
+        flex-direction: column; /* Stackt Inhalte untereinander */
+        align-items: center;
+    }
+
+    main {
+        padding: 10px; /* Weniger Padding auf kleineren Bildschirmen */
+        gap: 10px;
+    }
+
+    .logo {
+        width: 60px; /* Kleinere Logo-Größe */
+    }
+
+    nav ul {
+        position: static; /* Positioniert das Menü statisch */
+        margin-top: 10px;
+    }
+
+    nav ul li a.dropdown-item {
+        padding: 8px 16px; /* Kleinere Padding-Werte */
+    }
+}
+
+/* Responsives Design für Smartphones (Bildschirmbreite bis 768px) */
+@media (max-width: 768px) {
+    header {
+        padding: 10px 15px; /* Weniger Padding auf kleineren Bildschirmen */
+        margin-bottom: 10px;
+    }
+
+    main {
+        flex-direction: column; /* Inhalte untereinander anordnen */
+        padding: 10px;
+    }
+
+    footer {
+        padding: 15px; /* Weniger Padding im Footer */
+    }
+
+    .container, .table-container {
+        max-width: 100%; /* Container und Tabelle auf volle Breite setzen */
+    }
+
+    .logo {
+        width: 50px; /* Kleinere Logo-Größe für Handys */
+    }
+
+    nav ul {
+        text-align: center; /* Zentriert das Dropdown-Menü */
+    }
+
+    section {
+        padding: 15px; /* Weniger Padding in den Sektionen */
+    }
+
+    th, td {
+        padding: 8px 10px; /* Kleinere Zellenabstände */
+    }
+}
+/* Sortier- und Filter-Schaltflächen - Allgemeiner Stil */
+.sort-filter-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px; /* Abstand zwischen den Schaltflächen */
+    margin-bottom: 20px;
+}
+
+.sort-filter-buttons button {
+    font-size: 1rem;
+    padding: 8px 16px;
+    cursor: pointer;
+    background-color: var(--primary-color);
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.sort-filter-buttons button:hover {
+    background-color: #2f855a;
+}
+
+/* Responsives Design für Sortier- und Filter-Schaltflächen auf Tablets */
+@media (max-width: 1024px) {
+    .sort-filter-buttons button {
+        font-size: 0.9rem; /* Etwas kleinere Schriftgröße */
+        padding: 7px 14px; /* Weniger Padding */
+    }
+}
+
